@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
     res.json({ message: 'API works, but this endpoint does nothing' });
 });
 
-router.route('/:dev/:month')
+router.route('/:dev/transactions/:month')
     .options(function(req, res) {
         res.header('Access-Control-Allow-Methods', 'GET, POST').send();
     })
@@ -50,7 +50,7 @@ router.route('/:dev/:month')
         );
     });
 
-router.route('/:dev/:month/:id')
+router.route('/:dev/transactions/:month/:id')
     .options(function(req, res) {
         res.header('Access-Control-Allow-Methods', 'DELETE').send();
     })
