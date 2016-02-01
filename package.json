@@ -4,7 +4,7 @@
   "description": "Server for storing the data in the Sprint #6 deliverable",
   "author": "Dragos Badea <bedeabza@gmail.com>",
   "scripts": {
-    "start": "node_modules/forever/bin/forever start server.js"
+    "start": "node server.js"
   },
   "main": "server.js",
   "license": "MIT",
@@ -12,6 +12,7 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "forever": "^0.15.1",
+    "moment": "^2.11.1",
     "mongoose": "^4.3.5",
     "promise": "^7.1.1",
     "underscore": "^1.8.3"
