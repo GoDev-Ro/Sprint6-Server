@@ -21,12 +21,12 @@ router.get('/', function(req, res) {
     res.json({ message: 'API works, but this endpoint does nothing' });
 });
 
-router.route('/:dev/transactions/:month')
+router.route('/:dev/transactions')
     .options(function(req, res) {
         res.header('Access-Control-Allow-Methods', 'GET, POST').send();
     })
     .get(function(req, res) {
-        store.setDev(req.params.dev).getMonth(req.params.month).then(
+        store.setDev(req.params.dev).getTransactionsInMonth(req.query.month).then(
             function(result) {
                 res.json(result);
             },
@@ -50,7 +50,7 @@ router.route('/:dev/transactions/:month')
         );
     });
 
-router.route('/:dev/transactions/:month/:id')
+router.route('/:dev/transactions/:id')
     .options(function(req, res) {
         res.header('Access-Control-Allow-Methods', 'DELETE').send();
     })

@@ -49,11 +49,11 @@ module.exports = {
         currentDev = dev;
         return this;
     },
-    getMonth: function(month) {
+    getTransactionsInMonth: function(month) {
         return new Promise(function(resolve, reject) {
             try{
                 if (!/^\d{4}-\d{2}(-\d{2})?/.test(month)) {
-                    throw new Error('Invalid month specified. Use format YYYY-MM or YYYY-MM-DD');
+                    throw new Error('Invalid month specified. Use format YYYY-MM or YYYY-MM-DD for the query parameter "month"');
                 }
 
                 var start = moment(moment(month).format('YYYY-MM') + '-01');
